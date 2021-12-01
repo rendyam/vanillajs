@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strings & Numbers - Modifying Strings</title>
+</head>
+<body>
+    <h1>4. Modifying Strings</h1>
+    <a href="index.html">Kembali</a>
+
+</body>
+<script>
+    let text = 'I love orange!';
+
+    let textModified = text.replace('orange', 'apple');
+    console.log(textModified);
+
+    let chips = 'Cape Cod potato chips are my favorite brand of chips';
+    
+    let chipsModified = chips.replace('chips', 'deep fried potato slices');
+    let allChipsModified = chips.replace(new RegExp('chips', 'g'), 'deep fried potato slices');
+
+    console.log(chipsModified);
+    console.log(allChipsModified);
+</script>
+</html>
