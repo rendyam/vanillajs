@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation - Loops</title>
+</head>
+<body>
+    <h1>2. Loops</h1>
+    <a href="index.html">Kembali</a>
+    
+    <p>Please check <b>'Console'</b></p>
+</body>
+
+<script>
+    let sandwiches = ['turkey', 'tuna', 'chicken', 'salmon'];
+    console.log("for")
+    for(let i = 0; i < sandwiches.length; i++){
+        console.log(i);
+        console.log(sandwiches[i]);
+    }
+
+    console.log("for...of")
+    for(let sandwich of sandwiches){
+        console.log(sandwich);
+    }
+    let lunch = {
+        sandwich: 'tuna',
+        snack: 'chips',
+        drink: 'tea',
+        desert: 'cookie',
+        guest: 3,
+    };
+
+    console.log("for ... in")
+    for(let key in lunch){
+        console.log(key);
+        console.log(lunch[key]);
+        console.log("---");
+    }
+
+    console.log("Skipping loops");
+    for(let sandwich of sandwiches){
+        if(sandwich === 'tuna') continue;
+        console.log(sandwich);
+    }
+
+    console.log("Ending loops");
+    for(let key in lunch){
+        if(key === 'drink') break;
+        console.log(lunch[key]);
+    }
+
+    console.log("Array.forEach() and NodeList.forEach()");
+
+    sandwiches.forEach(function (sandwich, index){
+        console.log(index);
+        console.log(sandwich);
+    });
+
+    console.log("Skip menggunakan forEach()");
+    sandwiches.forEach(function (sandwich, index){
+        if(sandwich == 'tuna') return;
+        console.log(index);
+        console.log(sandwich);
+    });
+
+    
+</script>
+</html>

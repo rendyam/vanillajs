@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation - Project: Putting it all together</title>
+    <style>
+        body{
+            margin: 0 auto;
+            max-width: 40em;
+            width: 88%;
+        }
+
+        label, input{
+            display: block;
+            width: 100%;
+        }
+
+        input{
+            margin-bottom: 1em;
+        }
+
+        [aria-pressed="true"]{
+            background-color: #0088cc;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html">Kembali</a>
+    <h1>Change Password</h1>
+    <form>
+        <label for="current-pw">Current Password</label>
+        <input type="password" id="current-pw">
+        
+        <label for="new-pw">New Password</label>
+        <input type="password" id="new-pw">
+
+        <p><button type="button" data-password aria-pressed="false">Show Password</button></p>
+        <p><button>Change Password</button></p>
+    </form>
+    <script>
+        let toggle = document.querySelector('[data-password]');
+        let fields = document.querySelectorAll('[type="password"]');
+
+        toggle.addEventListener('click', function(event){
+            let pressed = event.target.getAttribute('aria-pressed');
+            if(pressed === 'false'){
+                event.target.setAttribute('aria-pressed', 'true');
+                for(let field of fields){
+                    field.type='text';
+                }
+            } else {
+                event.target.setAttribute('aria-pressed', 'false');
+                for(let field of fields){
+                    field.type='password';
+                }
+            }
+        });
+    </script>
+</body>
+</html>

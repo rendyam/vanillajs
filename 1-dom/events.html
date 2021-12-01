@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation - Event Listeners</title>
+</head>
+<body>
+    <h1>6. Event Listeners<h1>
+    <a href="index.html">Kembali</a>
+    <br>
+    <button id="klik-saya" class="btn">Klik saya</button>
+    <br>
+    <button class="btn">Klik 2</button>
+    <br>
+    <button class="btn">Klik 3</button>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <a href="http://google.com" class="google">Google.com</a>
+</body>
+<script>
+    // let btn = document.querySelector('#klik-saya');
+
+    // btn.addEventListener('click', function(event){
+    //     console.log(event);
+    //     console.log(event.target);
+    // });
+
+    // let btns = document.querySelector('.btn');
+    
+    // let btns = document.querySelectorAll('.btn');
+
+    // This won't work!
+    // btns.addEventListener('click', function(event){
+    //     console.log(event);
+    //     console.log(event.target);
+    // })
+
+    /**
+    * This works, but it's bad for performance
+    * DON'T DO IT!
+    */
+
+    // for(let btn of btns){
+    //     btn.addEventListener('click', function(event){
+    //         console.log(event);
+    //         console.log(event.target);
+    //     });
+    // }
+
+    document.addEventListener('click', function(event){
+        if(event.target.matches('.btn')){
+            console.log(event);
+        }
+    });
+
+    let link = document.querySelector('.google');
+
+    document.addEventListener('focus', function(event){
+        console.log(event);
+    }, true);
+
+    // this won't work
+    // window.addEventListener('click', 'scroll', function(){
+    //     console.log(event);
+    //     console.log(event.target);
+    // });
+
+
+    function logTheEvent(event){
+        console.log('The following event happened: ' +  event.type);
+    }
+
+    document.addEventListener('click', logTheEvent);
+    window.addEventListener('scroll', logTheEvent);
+
+</script>
+</html>

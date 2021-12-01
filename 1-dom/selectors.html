@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation - Selectors</title>
+</head>
+<body>
+    <h1>1. Selector</h1>
+    <a href="index.html">Kembali</a>
+    <br><br>
+    <p>Please check <b>'Console'</b> too</p>
+
+    <button>Testing</button>
+    <button>Testing 2</button>
+
+    <p class="bg-red">Testing bg-red</p>
+    <p class="bg-red">Testing bg-red 2</p>
+
+    <p data-snack="cookie">Cookie</p>
+    <p data-snack="donut">Donut</p>
+</body>
+
+<script>
+    // querySelectorAll
+    let button = document.querySelectorAll('button');
+    console.log(button);
+
+    let elemsRed = document.querySelectorAll('.bg-red');
+    console.log(elemsRed);
+
+    let elemsSnack = document.querySelectorAll('[data-snack]');
+    console.log(elemsSnack);
+
+    // querySelector
+    let buttonQ = document.querySelector('button');
+    console.log(buttonQ);
+
+    let elemsRedQ = document.querySelector('.bg-red');
+    console.log(elemsRedQ);
+
+    let elemsSnackQ = document.querySelector('[data-snack="cookie"]');
+    console.log(elemsSnackQ);
+
+    let none = document.querySelector('.bg-orange');
+    console.log(none);
+
+    if(none == null){
+        console.log("None is null");
+    }
+
+    let red = document.querySelector('.bg-red');
+    if(red.matches('[data-snack]')){
+        console.log('Yummy snack!');
+    } else {
+        console.log('No snacks!');
+    }
+</script>
+</html>

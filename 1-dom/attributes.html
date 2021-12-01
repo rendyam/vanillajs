@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation - Attributes & Properties</title>
+</head>
+<body>
+    <h1>5. Attributes & Properties</h1>
+    <a href="index.html">Kembali</a>
+    
+    <div id="lunch" data-sandwich="tuna" data-drink="lemon tea"></div>
+
+    <p>Bismillah</p>
+
+    <label for="salam">Assalaamu'alaykum</label>
+    <input type="text" id="salam">
+</body>
+<script>
+    let elem = document.querySelector('#lunch');
+
+    let sandwich = elem.getAttribute('data-sandwich'); // Get the value of the [data-sandwich] attribute
+    console.log(sandwich);
+
+    elem.setAttribute('data-fruit', 'strawberry');
+    console.log(elem);
+
+    elem.removeAttribute('data-drink');
+
+    if(elem.hasAttribute('data-fruit')){
+        console.log('Add a fruit!');
+    }
+
+    console.log("Properties section");
+
+    let elemMain = document.querySelector('#lunch');
+
+    let id = elemMain.id;
+    console.log(id);
+
+    elemMain.id = 'dinner';
+    console.log(elemMain.id);
+
+    let parent = elemMain.parentNode;
+    console.log(parent);
+
+    let p = document.querySelector('p');
+    //update the ID
+
+    p.setAttribute('id', 'first-paragraph');
+    
+    let id1 = p.getAttribute('id');
+    let id2 = p.id;
+
+    console.log(id1, id2);
+
+    let salam = document.querySelector('#salam');
+    console.log(salam);
+    salam.setAttribute('value', 'Assalaamu\'alaykum warahmatullaahi wabarakaatuh');
+
+    // salam.value = 'Bismillah';
+
+    let val1 = salam.value;
+    let val2 = salam.getAttribute('value');
+
+    console.log(val1, val2);
+</script>
+</html>

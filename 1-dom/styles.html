@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation - Styles</title>
+</head>
+<body>
+    <h1>4. Styles</h1>
+    <a href="index.html">Kembali</a>
+
+    <br><br>
+    <p>Please check <b>'Console' too</b></p>
+    
+    <p id="sandwich" style="background-color: green; color: white;">Bismillaahirrahmaanirrahiim</p>
+</body>
+
+<script>
+    let sandwich = document.querySelector('#sandwich');
+
+    let bgColor = sandwich.style.backgroundColor;
+    let fontWeight = sandwich.style.fontWeight;
+
+    console.log(bgColor, fontWeight);
+
+    sandwich.style.backgroundColor = 'purple';
+
+    let styles = sandwich.style.cssText;
+    console.log(styles);
+
+    sandwich.style.cssText = 'font-size: 2em; font-weight: bold;';
+
+    sandwich.style.cssText += 'color: purple';
+
+    let bgColorCmptd = window.getComputedStyle(sandwich).backgroundColor;
+    console.log("Computed "+bgColorCmptd);
+</script>
+</html>

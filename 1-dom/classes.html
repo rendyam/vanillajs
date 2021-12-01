@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation - Classes</title>
+</head>
+<body>
+    <h1>3. Classes</h1>
+    <a href="index.html">Kembali</a>
+
+    <p>Please check <b>'Console'</b></p>
+    <br><br>
+
+    <div id="sandwich" class="tuna"></div>
+</body>
+<script>
+    let elem = document.querySelector('#sandwich');
+
+    console.log(elem);
+    elem.classList.add('turkey');
+
+    elem.classList.remove('tuna');
+
+    elem.classList.toggle('tomato');
+    elem.classList.toggle('mayo');
+
+    if(elem.classList.contains('mayo')){
+        console.log('add mayo!');
+    }
+
+    let elemCn = document.querySelector('div');
+
+    let elemClasses = elemCn.className;
+
+    elemCn.className += ' vanilla-js';
+
+    console.log(elemCn);
+
+    elemCn.className = 'new-class';
+
+    console.log(elemCn);
+</script>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strings & Numbers - Leading & Trailing Characters</title>
+</head>
+<body>
+    <h1>1. Leading & Trailing Characters</h1>
+    <a href="index.html">Kembali</a>
+    <br><br>
+    <p>Please check <b>'Console'</b> too</p>
+</body>
+<script>
+    let hour3 = '3';
+    let hour12 = '12';
+
+    console.log("--padStart--");
+    console.log(hour3.padStart(2, 0));
+    console.log(hour12.padStart(2, 0));
+
+    let minutes0 = '0';
+    let minutes12 = '12';
+
+    console.log("--padEnd--");
+    console.log(minutes0.padEnd(2, '0'));
+    console.log(minutes12.padEnd(2, '0'));
+
+    let str = ' I love JavaScript . This is so awesome!     ';
+    console.log(str.trim());
+</script>
+</html>
