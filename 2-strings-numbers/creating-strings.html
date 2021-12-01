@@ -10,11 +10,61 @@
     <h1>3. Creating Strings</h1>
     <a href="index.html">Kembali</a>
     <br><br>
+    <div id="test"></div>
+    <div id="test2"></div>
+    <div id="test3"></div>
     <p>Please check <b>'Console'</b> too</p>
 </body>
 
 <script>
     let escString = 'What\'s the weather like today?';
     console.log(escString);
+
+    console.log("Combining String");
+    let str1 = 'Assalaamu\'alaykum warahmatullaahi wabarakaatuh';
+    let str2 = 'Bagaimana kabarnya?';
+    let concat = str1 + ' ' + str2;
+    console.log(concat);
+
+    let concat2 = 'Assalaamu\'alaykum warahmatullaahi wabarakaatuh ' + 'Bagaimana kabarnya?';
+    console.log(concat2);
+
+    let str3 = `
+                <h1>Ini adalah template literal</h1>
+                <p>Sepertinya akan berguna di kemudian hari</p>
+            `;
+    console.log(str3);
+
+    let test = document.querySelector('#test');
+    test.innerHTML = str3;
+
+    let greeting = 'Assalaamu\'alaykum, ';
+    let message = 'Semoga ilmunya bermanfaat. Dari variabel template literal';
+
+    let str4 = `
+                <h1>${greeting}</h1>
+                <p>${message}</p>
+            `;
+
+    let test2 = document.querySelector('#test2');
+    test2.innerHTML = str4;
+
+    let fruits = ['Orange', 'Grape', 'Strawberry', 'Mango', 'Apple'];
+    let showHeading = true;
+
+    let str5 = `${showHeading ? '<h1>Healthy Fruits</h1>' : ''}
+                ${(function(){
+                    if(fruits.length > 3){
+                        return '<p>There are at least 3 fruits</p>';
+                    } return '<p>There are fewer than 3 fruits</p>';
+                })()}
+                <ul>
+                    ${fruits.map(function(fruit){
+                        return `<li>${fruit}</li>`;
+                    }).join('')}
+                </ul>`;
+    
+    let test3 = document.querySelector('#test3');
+    test3.innerHTML = str5;
 </script>
 </html>
